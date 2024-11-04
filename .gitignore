@@ -1,0 +1,14 @@
+# Google Apps Script specific files
+appsscript.json
+.clasp.json
+
+# Generated files
+.clasp/
+node_modules/
+dist/
+build/
+
+# IDE specific files
+.idea/
+*.iml
+.DS_Store

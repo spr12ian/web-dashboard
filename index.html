@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Add your favicon -->
+    <link rel="icon" type="image/x-icon" href="YOUR_FAVICON_URL">
+    <?!= include('stylesheet'); ?>
+  </head>
+  <body>
+  
+    <h1>Web Dashboard</h1>
+    <div class="time">This webpage was loaded at <?= new Date() ?>.</div>
+    <ol>
+      <li><a href="https://calendar.google.com/calendar/r/agenda" target="_blank" rel="noreferrer noopener">Check calendar</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1OKLfa9AjZH6Ocpjz8tRO03JsT_j2N7VOI-YcqbXUXz4" target="_blank" rel="noreferrer noopener">Check menu</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1Sj13auBheoZalYbs1KUe1ESf0Gq-3gD2DfjdFmVEPTc" target="_blank" rel="noreferrer noopener">Check finances</a></li>
+      <li><a href="https://focus.nirvanahq.com/" target="_blank" rel="noreferrer noopener">NirvanaHQ</a></li>
+      <li><a href="https://docs.google.com/document/d/1rIh6dHIxxGDIt9WnOFY_EHSWH0CXdx2By_HS--oeXyQ/edit" target="_blank" rel="noreferrer noopener">Quick notes</a></li>
+      <li><a href="chrome://bookmarks/" target="_blank" rel="noreferrer noopener">Bookmarks</a></li>
+    </ol>
+  
+    <ul>
+      <li><a href="https://docs.google.com/spreadsheets/d/1OizKwEOj3Ruet-t30SOucF5BtpVnDxWEUj9Esa0adTo" target="_blank" rel="noreferrer noopener">Drugs</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1eSU63iZPqANlwpK9Aok6rNY70HCEuu69ll32px1ZR1Y" target="_blank" rel="noreferrer noopener">Fownes Street Accounts 2022-2023</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1lho8REPigZfXkgw1d5bRAEeNX6kZeRKKr58UXlRwy3Y" target="_blank" rel="noreferrer noopener">Glenburnie Lodge Accounts</a></li>
+      <li><a href="https://script.google.com/home" target="_blank" rel="noreferrer noopener">My Google Apps Script</a></li>
+      <li><a href="https://drive.google.com/drive/my-drive" target="_blank" rel="noreferrer noopener">My Drive</a></li>
+      <li><a href="https://script.google.com/d/1gyQPWJcUZJy-RyclcR5B8u_cMYfq0Nq7Tg4H46RfqwIDP6DXlAt0Vhbs/edit" target="_blank" rel="noreferrer noopener">Edit web dashboard</a></li>
+    </ul>
+    
+    <div>
+    <? var data = getData(); ?>
+    <table>
+      <? for (let i = 0; i < data.length; i++) { ?>
+        <? if (i === 0) { ?>
+          <thead>
+          <? } ?>
+            <tr>
+            <? for (let j = 0; j < data[i].length; j++) { ?>
+            <? if (j) { ?>
+              <td><?= data[i][j] ?></td>
+            <? } else { ?>
+              <td class="day"><?= data[i][j] ?></td>
+            <? } ?>
+          <? } ?>
+          </tr>
+        <? if (i === 0) { ?>
+          </thead>
+        <? } ?>
+      <? } ?>
+    </table>
+    </div>
+    
+    <?!= include('javascript'); ?>
+  </body>
+</html>
